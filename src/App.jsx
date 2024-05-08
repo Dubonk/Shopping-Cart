@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react'
 import { HomePage } from './components/HomePage'
+import { ShopPage } from './components/ShopPage'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/App.css'
+import { Header } from './components/Header';
 
 function App() {
+  const [cart, setCart] = useState([])
   const [category, setCategory] = useState('');
-
   const [products, setProducts] = useState(() => {
     const localProducts = localStorage.getItem('Products')
     if(localProducts === null) return [];
 
     return JSON.parse(localProducts);
 });
-const [currentIndex, setCurrentIndex] = useState(0);
 
 useEffect(() => {
     localStorage.setItem("Products", JSON.stringify(products))
@@ -33,10 +35,15 @@ useEffect(() => {
 }, []);
 
   return (
-    <>
-    <HomePage category={category} setCategory={setCategory} products={products} setProducts={setProducts} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex}/> 
-    </> 
+    <Router>
+      <Header cart={cart} setCart={setCart} />
+      <Routes>
+        <Route path="/" element={<HomePage cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
+        <Route path="shoppage" element={<ShopPage cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
+      </Routes>
+    </Router>
   )
 }
 
 export default App
+//<HomePage cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/> 
