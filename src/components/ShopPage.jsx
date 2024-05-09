@@ -1,6 +1,4 @@
 import { useState } from "react";
-// import { useLocation } from "react-router-dom";
-// import { Header } from "./Header";
 import DropDownMenu from "./DropDownMenu";
 import PropTypes from 'prop-types'
 
@@ -16,11 +14,6 @@ function ShopPage({setCart, cart, products}) {
         setCart: PropTypes.func
     }
     const [newCategory, setCategory] = useState('All')
-    // const location = useLocation();
-    //const products = location.state.products;
-    // const cart = location.state.cart;
-
-
     let filteredProducts = products;
 
     if (newCategory && newCategory !== 'All') {
