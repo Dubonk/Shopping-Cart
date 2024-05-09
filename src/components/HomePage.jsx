@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types'
 
-function HomePage({products}) {
+function HomePage({products, setCategory}) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -36,7 +36,7 @@ function HomePage({products}) {
                             </div>
                         )}
                 </div>
-                <Link className=" text-emerald-300 cursor-pointer font-semibold gap-x-1.5 rounded-md bg-slate-700 bg-opacity-0 px-3 py-2 text-sm text-left hover:bg-slate-800" to='shoppage'>Shop Here!</Link>
+                <Link onClick={setCategory('All')} className=" text-emerald-300 cursor-pointer font-semibold gap-x-1.5 rounded-md bg-slate-700 bg-opacity-0 px-3 py-2 text-sm text-left hover:bg-slate-800" to='shoppage'>Shop Here!</Link>
             </main>
             <footer className=" absolute bottom-0 w-full text-center">Website created by Kevin Dubon</footer>
         </div>

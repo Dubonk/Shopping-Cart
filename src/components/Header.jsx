@@ -6,8 +6,9 @@ import {
   Button,
   Typography,
 } from "@material-tailwind/react";
+import DropDownMenu from './DropDownMenu';
 
-function Header({cart, setCart}) {
+function Header({cart, setCart, setCategory}) {
 
     Header.propTypes = {
         category: PropTypes.string,
@@ -29,11 +30,16 @@ function Header({cart, setCart}) {
         setTotalPrice(totalRounded);
     }, [cart]);
 
+    const getCategory = (cat) => {
+        setCategory(cat);
+    };
+
 
     return (
         <header className=" bg-slate-700 sticky flex items-center justify-between px-4 py-2 z-10">
             <Link className=" text-4xl" to={"/"}>PseudoShop</Link>
             <div className="links flex justify-between mr-3">
+            <DropDownMenu getCategory={getCategory}/>
                 <button onClick={openDrawerRight} className=" cursor-pointer font-semibold gap-x-1.5 rounded-md bg-slate-700 bg-opacity-0 px-3 py-2 text-sm text-left hover:bg-slate-800">Cart</button>
             </div>
             {openRight && (

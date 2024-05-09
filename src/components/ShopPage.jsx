@@ -1,8 +1,8 @@
-import { useState } from "react";
-import DropDownMenu from "./DropDownMenu";
+// import { useState } from "react";
+// import DropDownMenu from "./DropDownMenu";
 import PropTypes from 'prop-types'
 
-function ShopPage({setCart, cart, products}) {
+function ShopPage({setCart, cart, products, category}) {
 
     ShopPage.propTypes = {
         products: PropTypes.array,
@@ -13,21 +13,17 @@ function ShopPage({setCart, cart, products}) {
         cart: PropTypes.array,
         setCart: PropTypes.func
     }
-    const [newCategory, setCategory] = useState('All')
+    
     let filteredProducts = products;
 
-    if (newCategory && newCategory !== 'All') {
-        filteredProducts = products.filter(item => item.category === newCategory);
+    if (category && category !== 'All') {
+        filteredProducts = products.filter(item => item.category === category);
     }
 
 
     if (!Array.isArray(products) || !products.length) {
         return <div className="absolute top-1/3 right-1/2 left-1/2 text-center flex font-semibold text-lg">No products available</div>;
     }
-
-    const getCategory = (cat) => {
-        setCategory(cat);
-    };
 
     function handleClick(item) {
         const newCart = [...cart, item];
@@ -39,8 +35,7 @@ function ShopPage({setCart, cart, products}) {
     return (
         <div className="z-0 w-full flex flex-col items-center">
         <div className=" w-full flex justify-end">
-        <DropDownMenu getCategory={getCategory}/>
-            <p className=" absolute font-bold right-1/2 left-1/2 text-lg">{newCategory.toUpperCase()}</p>
+            <p className=" absolute font-bold right-1/2 left-1/2 text-lg">{category.toUpperCase()}</p>
         </div>
         <div className="productsContainer my-2 py-5 w-4/5 flex flex-wrap gap-4 justify-center items-center">
         {filteredProducts.map((item, index) => (
