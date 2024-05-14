@@ -43,7 +43,7 @@ function ShopPage({setCart, cart, products, category}) {
                 <h4 className='line-clamp-2 font-semibold'>{item.title}</h4>
                 <img className="self-center grow h-2/5" src={item.image} alt={item.title} />
                 <p className='font-semibold'>${item.price}</p>
-                <button className=' justify-self-end bg-slate-700 rounded text-white px-2 py-1 hover:bg-opacity-85 active:scale-90' onClick={() => handleClick(item)}>Add to carts</button>
+                <button className='self-center justify-self-end bg-slate-700 rounded text-white px-2 py-1 hover:bg-opacity-85 active:scale-90' onClick={() => handleClick(item)}>Add to carts</button>
             </div>
         ))}
         </div>

@@ -15,17 +15,10 @@ body {
     justify-content: center;
 }
 
-/* .productsContainer {
-    width: 1280px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-} */
-
 .productCard {
     display: flex;
     flex-direction: column;
-    width: 220px;
+    width: 280px;
     height: 300px;
     border-radius: 12px;
     padding: 8px;

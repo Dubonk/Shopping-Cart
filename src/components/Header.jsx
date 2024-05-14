@@ -43,7 +43,7 @@ function Header({cart, setCart, setCategory}) {
 
     return (
         <header className=" bg-slate-700 flex justify-between items-center py-2 z-10">
-            <Link className="pl-1 font-semibold text-3xl" to={"/"}>PseudoShop</Link>
+            <Link className="pl-1 font-semibold text-2xl" to={"/"}>PseudoShop</Link>
             <div className="links flex justify-between mr-3">
             <DropDownMenu getCategory={getCategory}/>
                 <button onClick={openDrawerRight} className="relative cursor-pointer gap-x-1.5 font-semibold rounded-md bg-slate-700 bg-opacity-0 px-3 py-2 text-left hover:bg-slate-800">
@@ -66,7 +66,7 @@ function Header({cart, setCart, setCategory}) {
                     Total: ${totalPrice}
                     </div>
                     <div className="flex justify-center gap-2 my-3">
-                <Button size="sm" variant="outlined" className='hover:bg-slate-800'>
+                <Button onClick={() => alert('This is awkward...')} size="sm" variant="outlined" className='hover:bg-slate-800'>
                     Check out
                 </Button>
                 <Button onClick={() => setCart([])} size="sm" variant='outlined' className='hover:bg-slate-800'>Clear cart</Button>

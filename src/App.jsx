@@ -6,7 +6,12 @@ import './styles/App.css'
 import { Header } from './components/Header';
 
 function App() {
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState(() => {
+    const localCart = localStorage.getItem('cart')
+    if(localCart === null) return [];
+
+    return JSON.parse(localCart);
+  })
   const [category, setCategory] = useState('ALL');
   const [products, setProducts] = useState(() => {
     const localProducts = localStorage.getItem('Products')
@@ -17,7 +22,11 @@ function App() {
 
 useEffect(() => {
     localStorage.setItem("Products", JSON.stringify(products))
-  }, [products])
+  }, [products]);
+
+useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart))
+  }, [cart])
 
 
 useEffect(() => {
