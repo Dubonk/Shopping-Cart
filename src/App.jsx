@@ -7,7 +7,7 @@ import { Header } from './components/Header';
 
 function App() {
   const [cart, setCart] = useState([])
-  const [category, setCategory] = useState('All');
+  const [category, setCategory] = useState('ALL');
   const [products, setProducts] = useState(() => {
     const localProducts = localStorage.getItem('Products')
     if(localProducts === null) return [];

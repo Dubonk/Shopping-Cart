@@ -1,4 +1,5 @@
-import { Fragment } from 'react'
+import { Fragment } from 'react';
+import { Link } from "react-router-dom";
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import PropTypes from 'prop-types';
@@ -39,67 +40,50 @@ export default function DropDownMenu({ getCategory }) {
           <div className="py-1">
           <Menu.Item>
               {({ active }) => (
-                <div
-                onClick={() => handleClick('All')}
-                  className={classNames(
-                    active ? 'bg-slate-800 cursor-pointer' : 'text-white',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  All 
+                <div> 
+                  <Link className={classNames(
+                  active ? 'bg-slate-800 cursor-pointer' : 'text-white',
+                  'block px-4 py-2 text-sm')} onClick={() => handleClick('ALL')} to='shoppage'>All</Link>
                 </div>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <div
-                  onClick={() => handleClick('electronics')}
-                  className={classNames(
-                    active ? 'bg-slate-800 cursor-pointer' : 'text-white',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Electronics
+                <div>
+                  <Link className={classNames(
+                  active ? 'bg-slate-800 cursor-pointer' : 'text-white',
+                  'block px-4 py-2 text-sm')}  onClick={() => handleClick('electronics')} to='shoppage'>Electronics</Link>
                 </div>
               )}
             </Menu.Item>
           
             <Menu.Item>
               {({ active }) => (
-                <div
-                onClick={() => handleClick('jewelery')}
-                  className={classNames(
-                    active ? 'bg-slate-800 cursor-pointer' : 'text-white',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Jewelery
+                <div>
+                  <Link className={classNames(
+                  active ? 'bg-slate-800 cursor-pointer' : 'text-white',
+                  'block px-4 py-2 text-sm')} 
+                  onClick={() => handleClick('jewelery')} to='shoppage'>Jewelery</Link>
                 </div>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <div
-                onClick={() => handleClick("men's clothing")}
-                  className={classNames(
-                    active ? 'bg-slate-800 cursor-pointer' : 'text-white',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Men&apos;s Clothings
+                <div>
+                  <Link className={classNames(
+                  active ? 'bg-slate-800 cursor-pointer' : 'text-white',
+                  'block px-4 py-2 text-sm')} 
+                   onClick={() => handleClick("men's clothing")} to='shoppage'>Men&apos;s Clothings</Link>
                 </div>
               )}
             </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                <div
-                onClick={() => handleClick("women's clothing")}
-                className={classNames(
+                <div>
+                <Link className={classNames(
                   active ? 'bg-slate-800 cursor-pointer' : 'text-white',
-                  'block px-4 py-2 text-sm'
-                )}
-              >
-                Women&apos;s Clothing
+                  'block px-4 py-2 text-sm')} 
+                  onClick={() => handleClick("women's clothing")} to='shoppage'>Women&apos;s Clothings</Link>
               </div>
                 )}
               </Menu.Item>

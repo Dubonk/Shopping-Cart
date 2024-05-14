@@ -25,7 +25,6 @@ body {
 .productCard {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 220px;
     height: 300px;
     border-radius: 12px;

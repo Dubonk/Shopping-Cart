@@ -16,7 +16,7 @@ function ShopPage({setCart, cart, products, category}) {
     
     let filteredProducts = products;
 
-    if (category && category !== 'All') {
+    if (category && category !== 'ALL') {
         filteredProducts = products.filter(item => item.category === category);
     }
 
@@ -34,16 +34,16 @@ function ShopPage({setCart, cart, products, category}) {
 
     return (
         <div className="z-0 w-full flex flex-col items-center">
-        <div className=" w-full flex justify-end">
-            <p className=" absolute font-bold right-1/2 left-1/2 text-lg">{category.toUpperCase()}</p>
+        <div className=" w-full flex justify-center">
+            <p className="font-bold text-lg">{category.toUpperCase()}</p>
         </div>
-        <div className="productsContainer my-2 py-5 w-4/5 flex flex-wrap gap-4 justify-center items-center">
+        <div className="productsContainer cursor-pointer py-5 flex flex-wrap gap-4 justify-center items-center hover:">
         {filteredProducts.map((item, index) => (
             <div className="productCard bg-white text-center text-black" key={index}>
-                <h4>{item.title}</h4>
-                <img className=" h-2/5" src={item.image} alt={item.title} />
-                <p>${item.price}</p>
-                <button onClick={() => handleClick(item)}>Add to carts</button>
+                <h4 className='line-clamp-2 font-semibold'>{item.title}</h4>
+                <img className="self-center grow h-2/5" src={item.image} alt={item.title} />
+                <p className='font-semibold'>${item.price}</p>
+                <button className=' justify-self-end bg-slate-700 rounded text-white px-2 py-1 hover:bg-opacity-85 active:scale-90' onClick={() => handleClick(item)}>Add to carts</button>
             </div>
         ))}
         </div>
@@ -53,3 +53,6 @@ function ShopPage({setCart, cart, products, category}) {
 }
 
 export { ShopPage }
+
+
+//When adding item to cart, add a unique id to item in cart so when the item is removed, the correct one is deleted
