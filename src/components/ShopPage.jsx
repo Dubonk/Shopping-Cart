@@ -1,7 +1,4 @@
 import PropTypes from 'prop-types'
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-
 
 function ShopPage({setCart, cart, products, category}) {
 
