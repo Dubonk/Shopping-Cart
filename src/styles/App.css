@@ -15,6 +15,12 @@ body {
     justify-content: center;
 }
 
+.homePage {
+    background-image: url('../assets/BackgroundStore.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
 .productCard {
     display: flex;
     flex-direction: column;
