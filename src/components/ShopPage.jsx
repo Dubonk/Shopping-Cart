@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types'
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-
+import { DialogDefault } from './Drawer';
 
 function ShopPage({setCart, cart, products, category}) {
 
@@ -38,22 +36,18 @@ function ShopPage({setCart, cart, products, category}) {
         <div className=" w-full flex justify-center">
             <p className="font-bold text-lg">{category.toUpperCase()}</p>
         </div>
-        <div className="productsContainer cursor-pointer py-5 flex flex-wrap gap-4 justify-center items-center hover:">
+        <div className="productsContainer relative cursor-pointer py-5 flex flex-wrap gap-4 justify-center items-center hover:">
         {filteredProducts.map((item, index) => (
             <div className="productCard bg-white text-center text-black" key={index}>
-                <h4 className='line-clamp-2 font-semibold'>{item.title}</h4>
-                <img className="self-center grow h-2/5" src={item.image} alt={item.title} />
-                <p className='font-semibold'>${item.price}</p>
-                <button className='self-center justify-self-end bg-slate-700 rounded text-white px-2 py-1 hover:bg-opacity-85 active:scale-90' onClick={() => handleClick(item)}>Add to carts</button>
+            <h4 className='line-clamp-2 font-semibold'>{item.title}</h4>
+            <img className="self-center grow h-2/5" src={item.image} alt={item.title} />
+            <p className='font-semibold'>${item.price}</p>
+            <button className='self-center justify-self-end bg-slate-700 rounded text-white px-2 py-1 hover:bg-opacity-85 active:scale-90' onClick={() => handleClick(item)}>Add to carts</button>
             </div>
         ))}
         </div>
         </div>
     )
-
 }
 
 export { ShopPage }
-
-
-//When adding item to cart, add a unique id to item in cart so when the item is removed, the correct one is deleted

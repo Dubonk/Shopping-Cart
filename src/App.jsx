@@ -4,6 +4,8 @@ import { ShopPage } from './components/ShopPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/App.css'
 import { Header } from './components/Header';
+import { DialogDefault } from './components/Drawer';
+// import SimpleDialogDemo from './components/SimpleDialog';
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -49,6 +51,7 @@ useEffect(() => {
       <Routes>
         <Route path="/" element={<HomePage cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
         <Route path="shoppage" element={<ShopPage cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
+        <Route path="dialog" element={<DialogDefault cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
       </Routes>
     </Router>
   )

@@ -8,6 +8,7 @@ import {
 } from "@material-tailwind/react";
 import DropDownMenu from './DropDownMenu';
 import cartIcon from '/src/assets/cart.svg';
+import { DialogDefault } from './Drawer';
 
 function Header({cart, setCart, setCategory}) {
 
@@ -45,13 +46,14 @@ function Header({cart, setCart, setCategory}) {
         <header className=" bg-slate-700 flex justify-between items-center px-2 py-2 z-10">
             <Link className="pl-1 font-semibold text-2xl" to={"/"}>PseudoShop</Link>
             <div className="links flex justify-between mr-3">
-            <DropDownMenu getCategory={getCategory}/>
+                <DropDownMenu getCategory={getCategory}/>
                 <button onClick={openDrawerRight} className="relative cursor-pointer gap-x-1.5 rounded-md bg-slate-700 bg-opacity-0 px-3 py-2 text-left hover:bg-slate-800">
                         <img className='w-6 min-w-5' src={cartIcon} alt="cart" />
                         <div className='absolute top-0 right-0 w-3'>{cart.length}</div>
                     </button>
             </div>
             <Drawer
+                overlay={false}
                 placement="right"
                 open={openRight}
                 onClose={closeDrawerRight}
@@ -63,11 +65,11 @@ function Header({cart, setCart, setCategory}) {
                 </Typography>
                 </div>
                 <div className='font-semibold'> 
-                    Total: ${totalPrice}
+                    Totals: ${totalPrice}
                     </div>
                     <div className="flex justify-center gap-2 my-3">
                 <Button onClick={() => alert('This is awkward...')} size="sm" variant="outlined" className='hover:bg-slate-800'>
-                    Check out
+                    Check outs
                 </Button>
                 <Button onClick={() => setCart([])} size="sm" variant='outlined' className='hover:bg-slate-800'>Clear cart</Button>
                 </div>
