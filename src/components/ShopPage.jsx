@@ -27,8 +27,6 @@ function ShopPage({setCart, cart, products, category}) {
     function handleClick(item) {
         const newCart = [...cart, item];
         setCart(newCart)
-        console.log(newCart)
-        console.log(cart)
     }
 
     return (
@@ -40,7 +38,7 @@ function ShopPage({setCart, cart, products, category}) {
         {filteredProducts.map((item, index) => (
             <div className="productCard bg-white text-center text-black" key={index}>
             <h4 className='line-clamp-2 font-semibold'>{item.title}</h4>
-            <img className="self-center grow h-2/5" src={item.image} alt={item.title} />
+            <DialogDefault item={item} cart={cart} setCart={setCart} />
             <p className='font-semibold'>${item.price}</p>
             <button className='self-center justify-self-end bg-slate-700 rounded text-white px-2 py-1 hover:bg-opacity-85 active:scale-90' onClick={() => handleClick(item)}>Add to carts</button>
             </div>

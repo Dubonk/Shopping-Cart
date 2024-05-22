@@ -8,7 +8,6 @@ import {
 } from "@material-tailwind/react";
 import DropDownMenu from './DropDownMenu';
 import cartIcon from '/src/assets/cart.svg';
-import { DialogDefault } from './Drawer';
 
 function Header({cart, setCart, setCategory}) {
 
