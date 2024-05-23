@@ -49,6 +49,7 @@ useEffect(() => {
       <Routes>
         <Route path="/" element={<HomePage cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
         <Route path="shoppage" element={<ShopPage cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
+        {/* <Route path="dialog" element={<DialogDefault cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} /> */}
       </Routes>
     </Router>
   )
