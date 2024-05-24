@@ -22,7 +22,7 @@ export function DialogDefault({item, setCart, cart,}) {
   return (
     <div className=" self-center grow h-2/5 flex items-center justify-center">
         <img onClick={handleOpen} className="h-4/5" src={item.image} alt={item.title} />
-      <Dialog className="absolute z-0 flex justify-center items-center p-4 h-full text-black bg-slate-800 bg-opacity-70" open={open} handler={handleOpen}>
+      <Dialog className="absolute z-0 flex justify-center items-center p-4 h-full text-black bg-slate-800 bg-opacity-50 backdrop-blur" open={open} handler={handleOpen}>
         <div onClick={() => setOpen(false)} className="absolute w-full h-full"></div>
         <div className="flex flex-col justify-center max-w-lg max-sm:w-80 h-1/2 max-h-96 bg-white rounded-xl shadow-xl p-3 z-10">
           <h1 className="font-bold text-center underline mb-1">{item.title}</h1>
