@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Link } from "react-router-dom";
-import { Menu, Transition } from '@headlessui/react'
+import { Menu,MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import PropTypes from 'prop-types';
 
@@ -14,17 +14,18 @@ export default function DropDownMenu({ getCategory }) {
     getCategory: PropTypes.func,
 }
 
-  const handleClick = (category) => {
+  const handleClick = (category, close) => {
     getCategory(category);
+    close();
   }
 
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center gap-x-1 rounded-md bg-slate-700 bg-opacity-0 px-3 py-2  text-white shadow-sm  hover:bg-slate-800">
+        <MenuButton className="inline-flex w-full justify-center gap-x-1 rounded-md bg-slate-700 bg-opacity-0 px-3 py-2  text-white shadow-sm  hover:bg-slate-800">
           Categories
           <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
-        </Menu.Button>
+        </MenuButton>
       </div>
 
       <Transition
@@ -36,59 +37,59 @@ export default function DropDownMenu({ getCategory }) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-slate-700 text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <MenuItems className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-slate-700 text-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
-          <Menu.Item>
-              {({ active }) => (
+          <MenuItem>
+              {({ active, close }) => (
                 <div> 
                   <Link className={classNames(
                   active ? 'bg-slate-800 cursor-pointer' : 'text-white',
-                  'block px-4 py-2 text-sm')} onClick={() => handleClick('ALL')} to='shoppage'>All</Link>
+                  'block px-4 py-2 text-sm')} onClick={() => handleClick('ALL', close)} to='shoppage'>All</Link>
                 </div>
               )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
+            </MenuItem>
+            <MenuItem>
+              {({ active, close }) => (
                 <div>
                   <Link className={classNames(
                   active ? 'bg-slate-800 cursor-pointer' : 'text-white',
-                  'block px-4 py-2 text-sm')}  onClick={() => handleClick('electronics')} to='shoppage'>Electronics</Link>
+                  'block px-4 py-2 text-sm')}  onClick={() => handleClick('electronics', close)} to='shoppage'>Electronics</Link>
                 </div>
               )}
-            </Menu.Item>
+            </MenuItem>
           
-            <Menu.Item>
-              {({ active }) => (
+            <MenuItem>
+              {({ active, close }) => (
                 <div>
                   <Link className={classNames(
                   active ? 'bg-slate-800 cursor-pointer' : 'text-white',
                   'block px-4 py-2 text-sm')} 
-                  onClick={() => handleClick('jewelery')} to='shoppage'>Jewelery</Link>
+                  onClick={() => handleClick('jewelery', close)} to='shoppage'>Jewelery</Link>
                 </div>
               )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
+            </MenuItem>
+            <MenuItem>
+              {({ active, close }) => (
                 <div>
                   <Link className={classNames(
                   active ? 'bg-slate-800 cursor-pointer' : 'text-white',
                   'block px-4 py-2 text-sm')} 
-                   onClick={() => handleClick("men's clothing")} to='shoppage'>Men&apos;s Clothings</Link>
+                   onClick={() => handleClick("men's clothing", close)} to='shoppage'>Men&apos;s Clothings</Link>
                 </div>
               )}
-            </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
+            </MenuItem>
+              <MenuItem>
+                {({ active, close }) => (
                 <div>
                 <Link className={classNames(
                   active ? 'bg-slate-800 cursor-pointer' : 'text-white',
                   'block px-4 py-2 text-sm')} 
-                  onClick={() => handleClick("women's clothing")} to='shoppage'>Women&apos;s Clothings</Link>
+                  onClick={() => handleClick("women's clothing", close)} to='shoppage'>Women&apos;s Clothings</Link>
               </div>
                 )}
-              </Menu.Item>
+              </MenuItem>
           </div>
-        </Menu.Items>
+        </MenuItems>
       </Transition>
     </Menu>
   )

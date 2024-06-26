@@ -9,13 +9,14 @@ import {
 import DropDownMenu from './DropDownMenu';
 import cartIcon from '/src/assets/cart.svg';
 
-function Header({cart, setCart, setCategory}) {
+function Header({cart, setCart, setCategory, setLoading}) {
 
     Header.propTypes = {
         category: PropTypes.string,
         setCategory: PropTypes.func,
         cart: PropTypes.array,
         setCart: PropTypes.func,
+        setLoading: PropTypes.func,
     }
     const [openRight, setOpenRight] = useState(false);
     const openDrawerRight = () => setOpenRight(true);
@@ -33,6 +34,10 @@ function Header({cart, setCart, setCategory}) {
 
     const getCategory = (cat) => {
         setCategory(cat);
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false)
+        }, 1500);
     };
 
     function removeItem(item) {

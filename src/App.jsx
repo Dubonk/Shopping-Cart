@@ -6,6 +6,7 @@ import './styles/App.css'
 import { Header } from './components/Header';
 
 function App() {
+  const [loading, setLoading] = useState(false);
   const [cart, setCart] = useState(() => {
     const localCart = localStorage.getItem('cart')
     if(localCart === null) return [];
@@ -45,10 +46,10 @@ useEffect(() => {
 
   return (
     <Router>
-      <Header cart={cart} setCart={setCart} setCategory={setCategory}/>
+      <Header cart={cart} setLoading={setLoading} loading={loading} setCart={setCart} setCategory={setCategory}/>
       <Routes>
         <Route path="/" element={<HomePage cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
-        <Route path="shoppage" element={<ShopPage cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
+        <Route path="shoppage" element={<ShopPage cart={cart} setCart={setCart} loading={loading} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
         {/* <Route path="dialog" element={<DialogDefault cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} /> */}
       </Routes>
     </Router>
