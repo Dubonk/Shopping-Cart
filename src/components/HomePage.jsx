@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types'
+import '../styles/App.css';
 
 function HomePage({products}) {
 
@@ -25,9 +26,9 @@ function HomePage({products}) {
     return (
         <div className="homePage w-full h-full flex flex-col">
             <main className=" flex flex-col items-center grow justify-center w-full h-2/3">
-                <div className="mb-6 text-center bg-black rounded p-3 bg-opacity-70 md:text-3xl">
+                <div className="flex flex-col items-center mb-6 bg-black rounded p-3 bg-opacity-70 md:text-3xl">
                 <h2 className=" font-semibold text-center">Welcome to PseudoShop! You can find essentials for you or a loved one.</h2>
-                <Link className="text-emerald-300 cursor-pointer font-semibold gap-x-1.5 rounded-md bg-slate-700 bg-opacity-0 px-3 py-2 text-sm text-left hover:bg-slate-800" to='shoppage'>Shop Here!</Link>
+                <Link className="linkToStore text-emerald-300 cursor-pointer font-semibold gap-x-1.5 rounded-md bg-black bg-opacity-0 px-3 py-2 text-3xl text-left hover:bg-slate-800" to='shoppage'>Shop Here!</Link>
                 </div>
                 <div className=" flex-col text-center w-80 bg-white text-black rounded-lg h-96">
                     {products.length > 0 && (

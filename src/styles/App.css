@@ -29,3 +29,10 @@ body {
     border-radius: 12px;
     padding: 8px;
 }
+
+.linkToStore:active {
+    transform: scale(.9);
+}
+.linkToStore:focus {
+    transform: scale(.9);
+}
