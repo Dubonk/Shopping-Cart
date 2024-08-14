@@ -73,7 +73,7 @@ function Header({cart, setCart, setCategory, setLoading}) {
                     </div>
                     <div className="flex justify-center gap-2 my-3">
                 <Button onClick={() => alert('This is awkward...')} size="sm" variant="outlined" className='hover:bg-slate-800'>
-                    Check outs
+                    Check out
                 </Button>
                 <Button onClick={() => setCart([])} size="sm" variant='outlined' className='hover:bg-slate-800'>Clear cart</Button>
                 </div>
