@@ -8,6 +8,7 @@ import {
 } from "@material-tailwind/react";
 import DropDownMenu from './DropDownMenu';
 import cartIcon from '/src/assets/cart.svg';
+import closeIcon from '/src/assets/closeIcon.svg';
 
 function Header({cart, setCart, setCategory, setLoading}) {
 
@@ -67,8 +68,11 @@ function Header({cart, setCart, setCategory, setLoading}) {
                 >
                 <div className="mb-6 flex items-center justify-between">
                 <Typography variant="h5" color="blue-gray" className='text-center w-full' >
-                    Carts
+                    Carts 
                 </Typography>
+                <button onClick={closeDrawerRight}>
+                    <img className='absolute right-4 top-3 w-8 rounded-2xl hover:bg-slate-800 active:scale-90' src={closeIcon} alt="close button" />
+                </button>
                 </div>
                 <div className='font-semibold'> 
                     Totals: ${totalPrice}
