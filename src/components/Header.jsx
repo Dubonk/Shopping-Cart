@@ -48,7 +48,7 @@ function Header({cart, setCart, setCategory, setLoading}) {
     }
 
     return (
-        <header className=" bg-slate-700 flex justify-between items-center px-2 py-2 z-10">
+        <header className=" bg-slate-800 flex justify-between items-center px-2 py-2 z-10">
             <Link className="pl-1 font-semibold text-2xl" to={"/"}>PseudoShop</Link>
             <div className="links flex justify-between mr-3">
                 <DropDownMenu getCategory={getCategory}/>
@@ -62,7 +62,7 @@ function Header({cart, setCart, setCategory, setLoading}) {
                 placement="right"
                 open={openRight}
                 onClose={closeDrawerRight}
-                className={`absolute rounded h-full p-4 bg-slate-700 transition-transform duration-300 ${
+                className={`absolute rounded h-full p-4 bg-slate-800 transition-transform duration-300 ${
                     openRight ? "translate-x-0" : "translate-x-full"
                 }`}
                 >
@@ -71,17 +71,17 @@ function Header({cart, setCart, setCategory, setLoading}) {
                     Carts 
                 </Typography>
                 <button onClick={closeDrawerRight}>
-                    <img className='absolute right-4 top-3 w-8 rounded-2xl hover:bg-slate-800 active:scale-90' src={closeIcon} alt="close button" />
+                    <img className='absolute right-4 top-3 w-8 rounded-2xl hover:bg-slate-700 active:scale-90' src={closeIcon} alt="close button" />
                 </button>
                 </div>
-                <div className='font-semibold'> 
-                    Totals: ${totalPrice}
+                <div className='font-semibold text-center'> 
+                    Total: ${totalPrice}
                     </div>
                     <div className="flex justify-center gap-2 my-3">
-                <Button onClick={() => alert('This is awkward...')} size="sm" variant="outlined" className='hover:bg-slate-800'>
+                <Button onClick={() => alert('This is awkward...')} size="sm" variant="outlined" className='hover:bg-slate-700'>
                     Check out
                 </Button>
-                <Button onClick={() => setCart([])} size="sm" variant='outlined' className='hover:bg-slate-800'>Clear cart</Button>
+                <Button onClick={() => setCart([])} size="sm" variant='outlined' className='hover:bg-slate-700'>Clear cart</Button>
                 </div>
                 {cart.length < 1 ? 
                 <div className='h-4/5 bg-slate-900 rounded overflow-y-auto flex justify-center'>No Items</div>
