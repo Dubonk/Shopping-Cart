@@ -14,11 +14,6 @@ function ShopPage({setCart, cart, products, category, loading}) {
         setCart: PropTypes.func,
         loading: PropTypes.bool,
     }
-
-    function handleClick(item) {
-        const newCart = [...cart, item];
-        setCart(newCart)
-      }
     
     let filteredProducts = products;
 

@@ -52,7 +52,7 @@ function Header({cart, setCart, setCategory, setLoading}) {
             <Link className="pl-1 font-semibold text-2xl" to={"/"}>PseudoShop</Link>
             <div className="links flex justify-between mr-3">
                 <DropDownMenu getCategory={getCategory}/>
-                <button onClick={openDrawerRight} className="relative cursor-pointer gap-x-1.5 rounded-md bg-slate-700 bg-opacity-0 px-3 py-2 text-left hover:bg-slate-800">
+                <button onClick={openDrawerRight} className="relative cursor-pointer gap-x-1.5 rounded-md bg-slate-700 bg-opacity-0 px-3 py-2 text-left hover:bg-slate-700">
                         <img className='w-6 min-w-5' src={cartIcon} alt="cart" />
                         <div className='absolute top-0 right-0 w-3'>{cart.length}</div>
                     </button>
