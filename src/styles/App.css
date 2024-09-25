@@ -31,6 +31,12 @@ body {
     border-radius: 12px;
     padding: 8px;
 }
+.productCard:hover {
+    outline: 1px solid white;
+}
+.productCard:active {
+    scale: .99;
+}
 
 .linkToStore:active {
     transform: scale(.9);
