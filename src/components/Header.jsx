@@ -62,7 +62,7 @@ function Header({cart, setCart, setCategory, setLoading}) {
                 placement="right"
                 open={openRight}
                 onClose={closeDrawerRight}
-                className={`absolute rounded h-full p-4 bg-slate-800 transition-transform duration-300 ${
+                className={`cart absolute rounded h-4/5 p-4 bg-slate-800 transition-transform duration-300 ${
                     openRight ? "translate-x-0" : "translate-x-full"
                 }`}
                 >

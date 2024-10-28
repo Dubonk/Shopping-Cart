@@ -44,3 +44,11 @@ body {
 .linkToStore:focus {
     transform: scale(.9);
 }
+
+@media (max-width: 768px) {
+    .cart {
+        position: fixed;
+        height: 80%;
+        width: 100%;
+    }
+}
