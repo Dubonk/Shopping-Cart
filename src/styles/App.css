@@ -17,11 +17,26 @@ body {
 
 }
 
-.homePage {
+.bgPath {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
     background-image: url('../assets/BackgroundStore.jpg');
     background-position: center;
     background-size: cover;
+    z-index: -1;
+    animation: 1.5s polygon;
 }
+/* .bgPath:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+} */
+
+/* .homePage {
+    background-image: url('../assets/BackgroundStore.jpg');
+    background-position: center;
+    background-size: cover;
+} */
 
 .productCard {
     display: flex;
@@ -43,6 +58,11 @@ body {
 }
 .linkToStore:focus {
     transform: scale(.9);
+}
+
+@keyframes polygon {
+    0% {clip-path: polygon(50% 10%, 60% 50%, 50% 90%, 40% 50%);}
+    100% {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
 }
 
 @media (max-width: 768px) {

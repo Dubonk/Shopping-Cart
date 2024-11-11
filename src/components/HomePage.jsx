@@ -24,7 +24,8 @@ function HomePage({products}) {
     })
 
     return (
-        <div className="homePage w-full h-full flex flex-col">
+        <div className=" w-full h-full flex flex-col">
+            <div className="bgPath"></div>
             <main className=" flex flex-col items-center grow justify-center w-full h-2/3">
                 <div className="flex flex-col items-center mb-6 bg-black rounded p-3 bg-opacity-70 md:text-3xl">
                 <h2 className=" font-semibold text-center">Welcome to PseudoShop! You can find essentials for you or a loved one.</h2>
