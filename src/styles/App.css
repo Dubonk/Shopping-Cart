@@ -26,7 +26,8 @@ body {
     background-position: center;
     background-size: cover;
     z-index: -1;
-    animation: 1.5s polygon;
+    animation: 1.5s polygon linear;
+    transform: translateZ(0);
 }
 /* .bgPath:hover {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
