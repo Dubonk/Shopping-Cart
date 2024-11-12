@@ -31,10 +31,10 @@ function HomePage({products}) {
                 <h2 className=" font-semibold text-center">Welcome to PseudoShop! You can find essentials for you or a loved one.</h2>
                 <Link className="linkToStore text-emerald-300 cursor-pointer font-semibold gap-x-1.5 rounded-md bg-black bg-opacity-0 px-3 py-2 text-3xl text-left hover:bg-slate-800" to='shoppage'>Shop Here!</Link>
                 </div>
-                <div className=" flex-col text-center w-80 bg-white text-black rounded-lg h-96">
+                <div className="hpItems flex-col text-center w-80 bg-white text-black rounded-lg h-96">
                     {products.length > 0 && (
-                            <div className=" flex items-center justify-center w-full h-full">
-                                <img className=" w-2/3 h-auto max-h-full" src={products[currentIndex].image} alt={products[currentIndex].title} />
+                            <div className="slide flex items-center justify-center w-full h-full">
+                                <img className="w-2/3 h-auto max-h-full" src={products[currentIndex].image} alt={products[currentIndex].title} />
                             </div>
                         )}
                     </div>
