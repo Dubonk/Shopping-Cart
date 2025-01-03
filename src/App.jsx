@@ -4,6 +4,7 @@ import { ShopPage } from './components/ShopPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/App.css'
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -52,6 +53,7 @@ useEffect(() => {
         <Route path="shoppage" element={<ShopPage cart={cart} setCart={setCart} loading={loading} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} />
         {/* <Route path="dialog" element={<DialogDefault cart={cart} setCart={setCart} category={category} setCategory={setCategory} products={products} setProducts={setProducts}/>} /> */}
       </Routes>
+      <Footer></Footer>
     </Router>
   )
 }

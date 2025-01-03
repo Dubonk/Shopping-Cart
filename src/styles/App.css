@@ -71,7 +71,24 @@ h3 {
         width: 100%;
     }
     .footer {
-        display: none;
+        padding-bottom: 10px;
+        
+    }
+    .footerContent {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footerLeft, .FooterCenter, .footerRight {
+        width: 70%;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    h3 {
+        margin-bottom: 5px;
+        margin-top: 15px;
     }
     .bgPath {
         height: 100%;

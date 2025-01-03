@@ -98,6 +98,7 @@ function Header({cart, setCart, setCategory, setLoading}) {
                 }
             </Drawer>
         </header>
+
     )
 }
 
