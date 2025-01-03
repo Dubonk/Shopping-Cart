@@ -39,8 +39,24 @@ function HomePage({products}) {
                         )}
                     </div>
             </main>
-            <footer className="flex items-center justify-center bg py-2 w-full text-center">Website created by
-             <a className="hover:text-slate-500" href="https://github.com/Dubonk">&nbsp;Kevin Dubon</a>
+            <footer className="footer flex justify-evenly bg-slate-800 py-10 px-10 w-full">
+                <div className="footerLeft flex items-center flex-col w-1/4">
+                    <h3 className="font-semibold">Find us:</h3>
+                    <p>123 Main Street</p>
+                    <p>Los Angeles, CA 90210</p>
+                    <p>(323)-123-4567</p>
+                    <p>kevindubon43@gmail.com</p>
+                </div>
+                <div className="footerCenter flex items-center flex-col w-1/4">
+                        <h3 className="font-semibold">Links:</h3>
+                        <a href="#">Affiliate</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Github</a>
+                </div>
+                <div className="footerRight w-1/4">
+                    <h3 className="font-semibold">About Us:</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos libero minus atque sapiente maxime cupiditate quo.</p>
+                </div>
             </footer>
         </div>
     )
