@@ -55,6 +55,11 @@ h3 {
     margin-bottom: 10px;
 }
 
+footer {
+    position: relative;
+    bottom: 0;
+}
+
 @keyframes polygon {
     0% {clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);}
     100% {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
