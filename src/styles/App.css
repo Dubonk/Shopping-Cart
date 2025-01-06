@@ -66,6 +66,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .homePageContent {
+        min-height: 100%;
+    }
     .hpItems {
         width: 60%;
         height: 50%;
@@ -96,6 +99,6 @@ footer {
         margin-top: 15px;
     }
     .bgPath {
-        height: 100%;
+        height: 120%;
     }
 }
