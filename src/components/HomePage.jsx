@@ -24,9 +24,9 @@ function HomePage({products}) {
     })
 
     return (
-        <div className="homePageContent w-full h-full flex flex-col">
+        <div className="homePageContent w-full h-fit flex flex-col">
             <div className="bgPath"></div>
-            <main className=" flex flex-col items-center grow justify-center w-full h-2/3">
+            <main className="main flex flex-col items-center grow justify-center w-full h-screen">
                 <div className="flex flex-col items-center mb-6 bg-black rounded p-3 bg-opacity-70 md:text-3xl">
                 <h2 className=" font-semibold text-center">Welcome to PseudoShop! You can find essentials for you or a loved one.</h2>
                 <Link className="linkToStore text-emerald-300 cursor-pointer font-semibold gap-x-1.5 rounded-md bg-black bg-opacity-0 px-3 py-2 text-3xl text-left hover:bg-slate-800" to='shoppage'>Shop Here!</Link>
@@ -39,6 +39,10 @@ function HomePage({products}) {
                         )}
                     </div>
             </main>
+            <div className="subMain flex w-full h-screen  bg-white">
+                        <div className="leftSub"></div>
+                        <div className="rightSub"></div>
+                </div>
         </div>
     )
 }
