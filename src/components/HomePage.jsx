@@ -40,7 +40,13 @@ function HomePage({products}) {
                     </div>
             </main>
             <div className="subMain flex w-full h-screen  bg-white">
-                        <div className="leftSub"></div>
+                        <div className="leftSub flex justify-center items-center">
+                            <div className="bg-black bg-opacity-70 w-4/5 rounded-md p-3">
+                            <p className="saleText text-2xl text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, doloremque, nobis totam maiores ex voluptas eligendi maxime dicta impedit ipsam qui facilis, veniam tempore dolor inventore quisquam cum deserunt autem.
+                            </p>
+                            </div>
+                        </div>
                         <div className="rightSub"></div>
                 </div>
         </div>
